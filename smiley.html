@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="smiley" width=500 height=400 style="border: 2px solid black;"></canvas>
+    <script>
+        var smileydraw = document.getElementById("smiley");
+        var context = smileydraw.getContext("2d");
+//outer
+        context.beginPath();
+        context.fillStyle = 'yellow';
+        context.lineWidth = 3;
+        context.strokeStyle = 'black' ; 
+        context.arc(245, 185, 120, 0, Math.PI * 2, true);
+        context.fill();
+        context.stroke();
+        context.closePath();
+//eyes
+        context.beginPath();
+        context.fillStyle = 'black';
+        
+        context.moveTo(204, 150);
+        context.arc(183, 150, 22, 0, Math.PI * 2, true);
+        
+
+        context.moveTo(323, 150);
+        context.arc(300, 150, 22, 0, Math.PI * 2, true);
+        context.fill();
+        context.stroke();
+        context.closePath();
+//nose
+        context.beginPath();
+        context.strokeStyle='Black';
+        context.moveTo(245, 220)
+        context.lineTo(245, 180)
+        context.stroke();
+        context.closePath();
+//mouth
+        context.fillStyle = 'red';
+        context.beginPath();
+        context.moveTo(312, 205);
+        context.arc(245, 205, 66, 0, Math.PI, false);
+        context.fill();
+        context.stroke();
+        context.closePath();
+//ears
+        context.moveTo(166, 84);
+        context.arc(133, 84, 32, 0, Math.PI * 2, true);
+
+        context.moveTo(388, 84);
+        context.arc(357, 84, 32, 0, Math.PI * 2, true);
+        context.fill();
+        context.stroke()
+    </script>
+</body>
+</html>
