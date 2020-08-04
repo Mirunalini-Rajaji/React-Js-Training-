@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">To-Do List</h2>
+  <input type="text" id="myInput" placeholder="Type...">
+  <span onclick="newElement()" class="addBtn"><button>Add </button></span>
+</div>
+<h3>Pending Task</h3>
+<ul id="myUL"></ul>
+<h3>Completed Task</h3>
+<ul class="Completed"></ul>
+
+
+<script>
+  const Completed = document.querySelector('.Completed');  
+// Create a "done" button and append it to each list item
+var list = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < list.length; i++) {
+  var button = document.createElement("button");
+  button.innerHTML =  'Done';
+  button.className = "done";
+  button.appendChild(text);
+  list[i].appendChild(button);
+}
+
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var donebutton = document.createElement('button');
+  donebutton.innerHTML = 'done';
+  li.appendChild(donebutton);
+
+
+//append in completed list while clicking done button
+donebutton.addEventListener('click', function(){
+         console.log("done button...");
+				const parent = this.parentNode;
+				parent.remove();
+				Completed.appendChild(parent);
+				donebutton.style.display = 'none';
+			});
+    }
+
+</script>
+
+</body>
+</html>
