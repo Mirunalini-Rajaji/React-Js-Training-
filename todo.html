@@ -53,13 +53,12 @@ function newElement() {
 //append in completed list while clicking done button
 donebutton.addEventListener('click', function(){
          console.log("done button...");
-				const parent = this.parentNode;
-				parent.remove();
-				Completed.appendChild(parent);
-				donebutton.style.display = 'none';
-			});
-    }
-
+	 const parent = this.parentNode;
+	 parent.remove();
+	 Completed.appendChild(parent);
+	 donebutton.style.display = 'none';
+});
+    
 </script>
 
 </body>
